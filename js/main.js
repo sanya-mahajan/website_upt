@@ -1614,7 +1614,6 @@ $window.on('resize', function(){
 				
 
 		console.log('click')
-				console.log(data)
                 // code to display the contribution card
 				// create overlay element
 				const overlay = document.createElement("div");
@@ -1623,26 +1622,20 @@ $window.on('resize', function(){
 				const content = document.createElement("div");
 				content.id = "content";
 				
-				content.innerHTML = '<span><img width=80vw height=90vh src="' + person_img + '" alt=""></span>'+'<span>'+"   "+contributions+'</span>'
-				// create close button
-				const closeBtn = document.createElement("button");
-				closeBtn.id = "close-btn";
-				closeBtn.innerHTML = "X";
-				// append close button to content
-				content.appendChild(closeBtn);
+				content.innerHTML = 'contributions data'
+			
+
+
 				// append content to overlay
 				overlay.appendChild(content);
 				// append overlay to body
 				document.body.appendChild(overlay);
 				
-				// add click event to close button
-				document.addEventListener("click", function() {
-					document.body.removeChild(overlay);});
 
 
 
 
-   //Dont touch this code
+   //Dont modify this code
 
         // var person_id = $(this).data('person-id');
 		// var person_img = $(this).data('person-img');
