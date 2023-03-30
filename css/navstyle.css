@@ -1,0 +1,46 @@
+#blognavbar{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top: 1.5rem;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    width: 65%;
+}
+#wrapper{
+    border-radius: 2rem; 
+    display: block; 
+    padding:0.4rem;
+    display:inline-block; 
+    background-color: #F2F2F2;
+    color: #7D7575;
+    transition: 0.3s;
+    margin-bottom: 0.4rem;
+}
+#wrapper:hover{
+    background-color:#1F2732;
+    color: #DB3B62;
+}
+#qr{
+    display:inline-block; 
+    vertical-align: middle;
+}
+#navelems{
+    margin-bottom: 0.4rem;
+    display: block;
+}
+a.ccsnavbar{
+    text-decoration: none;
+}
+a.ccsnavbar:hover{
+    text-decoration: none;
+}
+#imagetag{
+    height:15px; 
+    border-radius: 50%;
+}
+#hashtag{
+    display:inline-block;
+    vertical-align: middle; 
+    font-size: 1rem;
+    margin-left: 0.2rem; 
+    margin-right: 0.3rem;
+}

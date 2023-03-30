@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-IN"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en-IN"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en-IN"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-IN">
+<!--<![endif]-->
+
+
+<head>
+   
+        <title>Creative Computing Society</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#1f2732"/>
+        <link rel="icon" href="images/CCSLOGO.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/main.css" class="color-switcher-link">
+      
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/compressed.js"></script>
+        <script src="js/main.js"></script>
+
+ 
+</head>
+
+<body>
+
+
+<!-- search modal -->
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="widget widget_search">
+        <form method="get" class="searchform search-form" action="http://webdesign-finder.com/">
+            <div class="form-group">
+                <label for="modal-search-input">Some Kinda Seach</label>
+                <input type="text" value="" name="search" class="form-control" placeholder="Search keyword"
+                       id="modal-search-input">
+            </div>
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- wrappers for visual page editor and boxed version of template -->
+<div id="canvas">
+    <div id="box_wrapper">
+
+        <!-- template sections -->
+
+        <!--topline section visible only on small screens|-->
+        <!-- header with three Bootstrap columns - left for logo, center for navigation and right for includes-->
+        <header class="page_header ds">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-sm-1 col-lg-3 col-11">
+                        <a href="/" class="logo text-center">
+                            <img src="images/ccs_logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xl-8 col-lg-6 col-1 text-sm-center">
+                        <!-- main nav start -->
+                        <nav class="top-nav">
+                            <ul class="nav sf-menu">
+                                <li>   <!-- <li class="active"> -->
+                                    <a href="{% url 'home:home' %}">Home</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'team:team' %}">Team</a>
+                                </li>
+                                <li class="hamburgerListItem">
+                                    <a href="{% url 'events:events' %}">All Events</a>
+                                </li>
+                                <li class="hamburgerListItem">
+                                    <a href="{% url 'events:primary_cluster' 'chakravyuh' %}">Chakravyuh</a>
+                                </li>
+                                <li class="hamburgerListItem">
+                                    <a href="{% url 'events:primary_cluster' 'helix' %}">Helix</a>
+                                </li>
+                                <li class='dropdown'>
+                                    <a href="#" class="dropbtn">Events</a>
+                                    <div class="dropdown-content">
+                                        <a class="top-dropdown" href="{% url 'events:events' %}">&nbsp; All Events</a>
+                                        <a href="{% url 'events:primary_cluster' 'chakravyuh' %}">&nbsp;Chakravyuh </a>
+                                        <a href="{% url 'events:primary_cluster' 'helix' %}">&nbsp; Helix</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{% slugurl 'home' %}">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'announcements:announcements' %}">Announcements</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'alumni:alumni' %}">Alumni</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- eof main nav -->
+                    </div>
+                    <div class="col-xl-2 col-lg-3 text-lg-left text-xl-right d-none d-lg-block">
+                        <div class="header_phone">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- header toggler -->
+            <span class="toggle_menu">
+                 <span></span>
+             </span>
+        </header>
+
+     
+        <span class="toggle_menu_side header-slide">
+            <span></span>
+        </span>
+
+     
+        
+
+
+
+        <!-- {% extends 'base/base.html' %}
+
+        {% load static %}
+        
+        
+        {% block title %}Team - Creative Computing Society{% endblock %}
+        {% block head-extension %} -->
+
+
+            <style>
+                .corner.ls.ms.corner-mirror:before,
+                .corner.ls.ms:after {
+                    border-bottom-color: #f2f2f2;
+                    border-top-color: #ffffff;
+                }
+        
+                .s-pt-130>[class*='container'] {
+                    padding-top: 50px;
+        
+                    
+                }
+                #overlay {
+            position: fixed;
+            top: 0;
+            left: 25vw;
+            right: 25vw;
+            width: 50%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #content {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #999;
+            border-radius: 10px;
+        }
+        
+        #close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: transparent;
+            border: none;
+            color: #999;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+            </style>
+    
+        <!-- {%  block content %} -->
+            <section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h1>Our Team</h1>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#pres">Mentors</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#supercore">Executive Board</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#core">Core Members</a>
+                                        </li>
+                                    </ol>
+                                    <div class="divider-15 d-none d-xl-block"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+            <section id="pres"
+                        class="s-pt-130 s-pb-15 s-pb-md-50 s-pt-xl-100 s-pb-lg-30 overflow-visible s-parallax testimonials-sliders main-testimonials ds">
+                        <div class="corner ls ms"></div>
+                        <div class="container">
+                            <div class="col-md-12 text-center">
+                                <h1>MENTORS</h1>
+                            </div>
+                            <div class="row c-mt-30 c-mt-md-0">
+        
+                                <div class="divider-20"></div>
+        
+                                <div class="divider-40 d-none d-md-block"></div>
+                                <div class="col-md-12">
+                                    <div class="owl-carousel" data-autoplay="false" data-responsive-lg="1"
+                                        data-responsive-md="1" data-responsive-sm="1" data-nav="false" data-dots="true"
+                                        id="quote">
+                                        <div class="quote-item">
+                                            <div class="quote-image">
+                                                <!-- <img src="{{president.img.url}}" alt="">
+                                                   -->
+                                                    <img src="media/team/images/Anju_Bala.jpeg" alt="">
+                                            </div>
+                                            <p class="small-text author-job">
+                                                {{president.designation}}
+                                            </p>
+                                            <h5>
+                                                <a href="#">{{president.name}}</a>
+                                            </h5>
+                                            <p>
+                                                <em class="big">
+                                                    {{president.desc}}
+                                                </em>
+                                            </p>
+                                        </div>
+        
+                                        <div class="quote-item">
+                                            <div class="quote-image">
+                                                <img src="{{vice_president.img.url}}" alt="">
+                                            </div>
+                                            <p class="small-text author-job">
+                                                {{vice_president.designation}}
+                                            </p>
+                                            <h5>
+                                                <a href="#">{{vice_president.name}}</a>
+                                            </h5>
+                                            <p>
+                                                <em class="big">
+                                                    {{vice_president.desc}}
+                                                </em>
+                                            </p>
+        
+                                        </div>
+                                    </div>
+                                    <!-- .testimonials-slider -->
+                                 </div>
+                                <div class="divider-55 d-none d-md-block"></div>
+                                <div class="text-center img-wrap col-md-12">
+                                    <img src="{% static '/img/vertical_line2.png' %}" alt="">
+                                </div>
+                                <div class="divider-10 d-none d-md-block"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="corner corner-light"></div>
+                    </section>
+        
+            <section id="supercore" class="ls s-pt-75 s-pb-100 s-pb-lg-130 team">
+                        <div class="divider-40 d-none d-xl-block"></div>
+                        <div class="container text-center">
+                            <div class="row c-mb-30 justify-content-center">
+                                <div class="col-md-12 text-center">
+                                    <h1><span style="font-weight: bolder">EXECUTIVE BOARD</span></h1>
+                                </div>
+                                <!-- {% for member in executive_board %} -->
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="vertical-item ls ms content-padding text-center">
+                                        <div class="item-media"><a class="contri" data-person-id="{{ member.id }}" data-person-img="media/team/images/Aarya_Pathania.jpeg" data-person-name="{{member.name}}">
+                                            <img src="media/team/images/Aarya_Pathania.jpeg" alt="Aarya"></a>
+                                        </div>
+                                        <div class="item-content">
+                                            <h6>
+                                                Aarya
+                                            </h6>
+                                            <p class="small-text color-main">
+                                                <!-- {{ member.designation }} -->Joint Sec
+                                            </p>
+                                            <p class="social-icons">
+                                                <a href="{{ member.linkedin }}" class="fa fa-linkedin color-icon bg-icon rounded-icon"
+                                                    title="linkedin"></a>
+                                                <a href="{{ member.github }}" class="fa fa-github color-icon bg-icon rounded-icon"
+                                                    title="github"></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- {% endfor %} -->
+        
+        
+                                <div class="col-md-12 text-center" id="core">
+                                    <h1><span style="font-weight: bold">CORE</span></h1>
+                                </div>
+        
+                                <!-- {% for member in core %} -->
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="vertical-item ls ms content-padding text-center">
+                                        <div class="item-media"><a class="contri" data-person-id="{{ member.id }}" data-person-img="{{member.img.url}}">
+                                            <!-- <img src="{{ member.img.url }}" alt="Aarya"></a> -->
+                                            <img src="media/team/images/Aarya_Pathania.jpeg" alt="Aarya"></a>
+                                        </div>
+                                        <div class="item-content">
+                                            <h6>
+                                                Aarya
+                                            </h6>
+                                            <p class="small-text color-main">
+                                                <!-- {{ member.designation }} -->Core Exec
+                                            </p>
+                                            <p class="social-icons">
+                                                <a href="{{ member.linkedin }}"
+                                                    class="fa fa-linkedin color-icon bg-icon rounded-icon" title="linkedin"></a>
+                                                <a href="{{ member.github }}"
+                                                    class="fa fa-github color-icon bg-icon rounded-icon" title="github"></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- {% endfor %} -->
+        
+        
+                                <div class="d-none d-lg-block divider-75"></div>
+                            </div>
+                        </div>
+                    </section>
+        
+        <!-- {% endblock %} -->
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
+
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="divider-20 d-none d-xl-block"></div>
+                        <div class="col-md-12 mt-4 text-center animate" data-animation="fadeInUp">
+                            <img class="margin-negative" src="home/images/Logo10.png" alt="" width="280"
+                                 height="220">
+                            <div class="widget widget_social_buttons">
+                                <a href="https://www.facebook.com/CCSTU/?ref=br_rs" class="fa fa-facebook color-icon"
+                                   title="facebook"></a>
+                                <a href="https://instagram.com/ccs_tiet?igshid=1qyrhp8a49tvr"
+                                   class="fa fa-instagram color-icon" title="instagram"></a>
+                                <a href="https://www.linkedin.com/company/creative-computing-society"
+                                   class="fa fa-linkedin color-icon" title="linkedin"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="divider-20 d-none d-lg-block"></div>
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <span class="copyright_year"></span> Learn Code Collaborate
+                        </p>
+                    </div>
+                    <div class="divider-20 d-none d-lg-block"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- eof #box_wrapper -->
+</div>
+<!-- eof #canvas -->
+
+
+<script src="js/compressed.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+
+
+</html>
